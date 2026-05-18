@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from 'react';
+import './styles/global.css';
+import Hero   from './components/Hero/Hero';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
 
-function App() {
+export default function App() {
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    const move = (e) => {
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top  = `${e.clientY}px`;
+    };
+
+    const expand = () => cursor.classList.add('expanded');
+    const shrink = () => cursor.classList.remove('expanded');
+
+    window.addEventListener('mousemove', move);
+
+    // Expand on interactive elements
+    const interactives = document.querySelectorAll('a, button, .mondrian-wrapper, .project-card');
+    interactives.forEach(el => {
+      el.addEventListener('mouseenter', expand);
+      el.addEventListener('mouseleave', shrink);
+    });
+
+    return () => {
+      window.removeEventListener('mousemove', move);
+      interactives.forEach(el => {
+        el.removeEventListener('mouseenter', expand);
+        el.removeEventListener('mouseleave', shrink);
+      });
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* Custom cursor */}
+      <div className="cursor" ref={cursorRef} aria-hidden="true" />
+
+      {/* Main content */}
+      <main>
+        <Hero />
+        <Skills />
+        <Projects />
+      </main>
+    </>
   );
 }
-
-export default App;

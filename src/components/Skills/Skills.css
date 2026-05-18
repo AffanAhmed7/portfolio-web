@@ -1,0 +1,221 @@
+/* ═══════════════════════════════════════════════════════════════════
+   SKILLS — Mondrian & Marquee
+═══════════════════════════════════════════════════════════════════ */
+
+.skills {
+  position: relative;
+  padding: 140px var(--px-hero);
+  background: var(--black);
+  z-index: 2;
+  border-top: 1px solid var(--gray-2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center everything */
+}
+
+/* ─── Header ─────────────────────────────────────────────────────── */
+.skills__header {
+  margin-bottom: 64px;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skills__eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--gray-4);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.skills__title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.skills__subtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--gray-4);
+  line-height: 1.6;
+}
+
+/* ─── Mondrian Grid ──────────────────────────────────────────────── */
+.mondrian-skills {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 120px;
+  gap: 3px;
+  background: var(--gray-2);
+  border: 1px solid var(--gray-2);
+  border-radius: 2px;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 80px;
+}
+
+/* Cell structure */
+.sk-cell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  overflow: hidden;
+  transition: transform var(--t-spring), filter var(--t-med);
+  cursor: none;
+}
+
+/* Colored by default */
+.sk-cell.sk-red    { background: var(--accent-red);    box-shadow: 0 0 0 1px #cc2e24 inset; }
+.sk-cell.sk-blue   { background: var(--accent-blue);   box-shadow: 0 0 0 1px #005fcc inset; }
+.sk-cell.sk-yellow { background: var(--accent-yellow); box-shadow: 0 0 0 1px #ccaa00 inset; }
+.sk-cell.sk-white  { background: var(--white);         box-shadow: 0 0 0 1px var(--gray-5) inset; }
+.sk-cell.sk-dark   { background: var(--black);         box-shadow: 0 0 0 1px var(--gray-3) inset; }
+
+/* Base states */
+.sk-icon-wrapper {
+  font-size: 40px;
+  transition: transform var(--t-spring);
+  z-index: 2;
+  transform: translateY(-8px);
+}
+
+.sk-label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  position: absolute;
+  bottom: 16px;
+  transition: transform var(--t-spring);
+}
+
+/* Text colors by default */
+.sk-cell.sk-red .sk-icon-wrapper, .sk-cell.sk-red .sk-label { color: var(--white); }
+.sk-cell.sk-blue .sk-icon-wrapper, .sk-cell.sk-blue .sk-label { color: var(--white); }
+.sk-cell.sk-yellow .sk-icon-wrapper, .sk-cell.sk-yellow .sk-label { color: var(--black); }
+.sk-cell.sk-white .sk-icon-wrapper, .sk-cell.sk-white .sk-label { color: var(--black); }
+.sk-cell.sk-dark .sk-icon-wrapper, .sk-cell.sk-dark .sk-label { color: var(--white); }
+
+/* Cell spanning */
+.span-c-2 { grid-column: span 2; }
+.span-r-2 { grid-row: span 2; }
+.span-r-3 { grid-row: span 3; }
+
+/* ── Hover interactions ── */
+.sk-cell:hover {
+  transform: scale(0.98);
+  z-index: 10;
+  filter: brightness(1.1);
+}
+
+/* ─── Marquee ────────────────────────────────────────────────────── */
+.marquee-container {
+  width: 100vw;
+  /* Remove negative margin to center it since flex-direction is column */
+  overflow: hidden;
+  position: relative;
+  background: var(--black);
+  /* Removed border-top and border-bottom */
+  padding: 24px 0;
+  display: flex;
+}
+
+/* Fade gradients on edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--black), transparent);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--black), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 60px;
+  padding-left: 60px;
+  white-space: nowrap;
+  animation: scroll-left 30s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.6;
+  transition: opacity var(--t-med), color var(--t-med);
+  cursor: none;
+}
+
+.marquee-item:hover {
+  opacity: 1;
+  color: var(--white);
+}
+
+.marquee-icon {
+  font-size: 20px; /* Reduced from 24px */
+}
+
+.marquee-name {
+  font-family: var(--font-mono);
+  font-size: 13px; /* Reduced from 16px */
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .skills { padding: 100px 48px; }
+  
+  .mondrian-skills {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills { padding: 80px 24px; }
+  
+  .mondrian-skills {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 90px;
+  }
+  
+  .span-c-2 { grid-column: span 1; }
+  .span-r-3 { grid-row: span 2; }
+}
