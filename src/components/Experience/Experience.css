@@ -1,0 +1,226 @@
+/* ═══════════════════════════════════════════════════════════════════
+   EXPERIENCE — Structured Log Records
+   ═══════════════════════════════════════════════════════════════════ */
+
+.exp-section {
+  position: relative;
+  padding: var(--py-hero) var(--px-hero);
+  background-color: #0c0c0c; /* Lighter than #0A0A0A for subtle block contrast */
+  z-index: 2;
+  border-top: 1px solid var(--gray-2);
+}
+
+.exp-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ─── Header ─────────────────────────────────────────────────────── */
+.exp-header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.exp-header h2 {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--white);
+}
+
+.exp-subtext {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gray-4);
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Log Block Container ────────────────────────────────────────── */
+.exp-log-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ─── Experience Item Block ──────────────────────────────────────── */
+.exp-block {
+  position: relative;
+  background-color: #101010;
+  border: 1px solid var(--gray-2);
+  border-radius: 4px;
+  padding: 40px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 
+    background-color var(--t-med), 
+    border-color var(--t-med), 
+    transform var(--t-spring);
+}
+
+/* Hover State: Background lift and border lightens */
+.exp-block:hover {
+  background-color: #161616;
+  border-color: var(--gray-4);
+}
+
+/* Mondrian Controlled Left Accent Bar */
+.exp-mondrian-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3px;
+  display: flex;
+  flex-direction: column;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--t-spring);
+  z-index: 5;
+}
+
+.exp-bar-red    { background-color: var(--accent-red);    flex: 2; }
+.exp-bar-blue   { background-color: var(--accent-blue);   flex: 1; }
+.exp-bar-yellow { background-color: var(--accent-yellow); flex: 3; }
+
+.exp-block:hover .exp-mondrian-bar {
+  transform: scaleY(1);
+}
+
+/* Metadata Row */
+.exp-metadata {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--gray-4);
+  line-height: 1;
+}
+
+.exp-meta-period {
+  font-weight: 500;
+  color: var(--gray-5);
+}
+
+.exp-meta-role {
+  color: var(--white);
+  font-weight: 500;
+}
+
+.exp-meta-divider {
+  opacity: 0.3;
+}
+
+.exp-meta-org {
+  color: var(--gray-4);
+}
+
+/* Horizontal Line Divider */
+.exp-divider-line {
+  height: 1px;
+  background-color: var(--gray-2);
+  margin: 24px 0;
+  opacity: 0.3;
+  transition: opacity var(--t-med);
+}
+
+.exp-block:hover .exp-divider-line {
+  opacity: 0.7;
+}
+
+/* Content Body */
+.exp-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.exp-overview {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--gray-6);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 900px;
+}
+
+/* Bullet Contributions */
+.exp-contributions {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exp-bullet {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--gray-5);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+}
+
+.exp-bullet::before {
+  content: '•';
+  color: var(--gray-4);
+  font-size: 1.2rem;
+  margin-right: 15px;
+  line-height: 1.25;
+}
+
+/* Tech Stack Inline list */
+.exp-tech-stack {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--gray-4);
+  letter-spacing: 0.02em;
+  margin-top: 10px;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .exp-section {
+    padding: 100px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .exp-section {
+    padding: 80px 24px;
+  }
+
+  .exp-block {
+    padding: 30px 24px;
+  }
+
+  .exp-metadata {
+    flex-wrap: wrap;
+    gap: 10px;
+    line-height: 1.4;
+  }
+
+  .exp-meta-divider {
+    display: none; /* Hide divider line and stack naturally */
+  }
+
+  .exp-meta-org {
+    width: 100%; /* Force organization to stack on second line */
+  }
+  
+  .exp-overview {
+    font-size: 1.05rem;
+  }
+  
+  .exp-bullet {
+    font-size: 0.95rem;
+  }
+}

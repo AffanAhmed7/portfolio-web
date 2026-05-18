@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════════════════════════════════
+   CONTACT — Simplified Professional Footer Section
+   ═══════════════════════════════════════════════════════════════════ */
+
+.contact-section {
+  position: relative;
+  background-color: var(--black); /* #0A0A0A */
+  padding: 120px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  border-top: 1px solid var(--gray-2);
+}
+
+.contact-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ─── Heading ─────────────────────────────────────────────────────── */
+.contact-title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4vw, 44px);
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+/* ─── Contact Info ────────────────────────────────────────────────── */
+.contact-info {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  color: var(--gray-4);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+  margin-bottom: 0;
+  align-items: center;
+}
+
+.contact-item {
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.contact-label {
+  color: var(--gray-5);
+  font-weight: 500;
+}
+
+.contact-value {
+  color: var(--white);
+}
+
+.contact-link {
+  color: var(--white);
+  transition: color var(--t-fast);
+  cursor: none;
+}
+
+.contact-link:hover {
+  color: var(--gray-4);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ─── Outline Button ─────────────────────────────────────────────── */
+.contact-btn {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 14px 36px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: none;
+  transition: 
+    background-color var(--t-med), 
+    color var(--t-med), 
+    transform var(--t-fast);
+}
+
+.contact-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+  transform: translateY(-2px);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .contact-section {
+    padding: 80px 24px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+    gap: 12px;
+    margin-bottom: 36px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+  }
+
+  .contact-btn {
+    width: 100%;
+    padding: 13px 24px;
+  }
+}

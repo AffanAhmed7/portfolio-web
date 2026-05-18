@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════════════════════════════════
+   FOOTER — Technical System Metadata Footer
+   ═══════════════════════════════════════════════════════════════════ */
+
+.footer {
+  background-color: #080808; /* Slightly darker anchoring color */
+  border-top: 1px solid var(--gray-2);
+  padding: 32px var(--px-hero);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--gray-4);
+  letter-spacing: 0.02em;
+}
+
+.footer-copyright {
+  color: var(--gray-4);
+  font-weight: 400;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px 24px;
+  }
+
+  .footer-container {
+    font-size: 0.75rem;
+  }
+}

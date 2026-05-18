@@ -87,6 +87,37 @@ export default function Hero() {
           </a>
         </motion.div>
       </motion.div>
+
+      {/* Stylized Minimalist Mountains Backdrop */}
+      <div className="hero__mountains" aria-hidden="true">
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="none">
+          {/* Back Mountain Ridge */}
+          <motion.path 
+            d="M0,220 L250,90 L550,250 L800,60 L1100,270 L1300,110 L1440,240 L1440,320 L0,320 Z" 
+            fill="rgba(255, 255, 255, 0.02)"
+            initial={{ y: 80, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Middle Mountain Ridge */}
+          <motion.path 
+            d="M0,260 L180,170 L400,290 L620,140 L900,300 L1150,180 L1350,280 L1440,200 L1440,320 L0,320 Z" 
+            fill="rgba(255, 255, 255, 0.04)"
+            initial={{ y: 60, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1.0, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          />
+          {/* Front Mountain Ridge */}
+          <motion.path 
+            d="M0,290 L300,210 L600,310 L850,230 L1100,315 L1280,240 L1440,300 L1440,320 L0,320 Z" 
+            fill="rgba(255, 255, 255, 0.07)"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </svg>
+        <div className="hero__mountains-fade" />
+      </div>
     </section>
   );
 }

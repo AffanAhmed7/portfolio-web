@@ -177,7 +177,7 @@ export default function Projects() {
   };
 
   return (
-    <section className="projects-section">
+    <section className="projects-section" id="projects">
       <div className="projects-header-wrapper">
         <div className="projects-header">
           <h2>Projects</h2>

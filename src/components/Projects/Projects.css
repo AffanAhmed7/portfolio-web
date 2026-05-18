@@ -8,8 +8,8 @@
 
 .projects-header-wrapper {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
   padding: 0 var(--px-hero);
   margin-bottom: 60px;
 }
@@ -365,7 +365,6 @@
   margin: 0;
 }
 
-/* Architecture Block */
 .architecture-block {
   background-color: var(--gray-1);
   border: 1px solid var(--gray-2);
@@ -374,7 +373,8 @@
   font-size: 1rem;
   color: var(--gray-5);
   line-height: 2;
-  white-space: pre-wrap;
+  white-space: pre;
+  overflow-x: auto;
 }
 
 /* Features List */
@@ -420,6 +420,14 @@
     padding: 30px;
   }
   
+  .project-detail-overlay {
+    padding: 80px 48px;
+  }
+
+  .detail-close {
+    right: 48px;
+  }
+
   .detail-title {
     font-size: 3rem;
   }
@@ -428,9 +436,19 @@
 @media (max-width: 768px) {
   .projects-header-wrapper {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
     padding: 0 24px;
+    width: 100%;
+  }
+
+  .projects-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .slider-nav {
@@ -481,4 +499,39 @@
   .projects-header h2 {
     font-size: 2.5rem;
   }
+
+  /* Projects Case Study Overlay overrides for smaller devices */
+  .project-detail-overlay {
+    padding: 70px 24px 40px;
+  }
+
+  .detail-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background-color: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--gray-2);
+    border-radius: 4px;
+    padding: 6px 12px;
+    z-index: 1005;
+  }
+
+  .detail-title {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-top: 20px;
+  }
+
+  .detail-short-desc {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+  }
+
+  .architecture-block {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    padding: 20px;
+  }
 }
+

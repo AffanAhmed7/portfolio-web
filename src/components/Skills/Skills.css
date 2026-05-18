@@ -11,7 +11,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center everything */
+  align-items: center;
+  /* Center everything */
 }
 
 /* ─── Header ─────────────────────────────────────────────────────── */
@@ -79,11 +80,30 @@
 }
 
 /* Colored by default */
-.sk-cell.sk-red    { background: var(--accent-red);    box-shadow: 0 0 0 1px #cc2e24 inset; }
-.sk-cell.sk-blue   { background: var(--accent-blue);   box-shadow: 0 0 0 1px #005fcc inset; }
-.sk-cell.sk-yellow { background: var(--accent-yellow); box-shadow: 0 0 0 1px #ccaa00 inset; }
-.sk-cell.sk-white  { background: var(--white);         box-shadow: 0 0 0 1px var(--gray-5) inset; }
-.sk-cell.sk-dark   { background: var(--black);         box-shadow: 0 0 0 1px var(--gray-3) inset; }
+.sk-cell.sk-red {
+  background: var(--accent-red);
+  box-shadow: 0 0 0 1px #cc2e24 inset;
+}
+
+.sk-cell.sk-blue {
+  background: var(--accent-blue);
+  box-shadow: 0 0 0 1px #005fcc inset;
+}
+
+.sk-cell.sk-yellow {
+  background: var(--accent-yellow);
+  box-shadow: 0 0 0 1px #ccaa00 inset;
+}
+
+.sk-cell.sk-white {
+  background: var(--white);
+  box-shadow: 0 0 0 1px var(--gray-5) inset;
+}
+
+.sk-cell.sk-dark {
+  background: var(--black);
+  box-shadow: 0 0 0 1px var(--gray-3) inset;
+}
 
 /* Base states */
 .sk-icon-wrapper {
@@ -104,16 +124,43 @@
 }
 
 /* Text colors by default */
-.sk-cell.sk-red .sk-icon-wrapper, .sk-cell.sk-red .sk-label { color: var(--white); }
-.sk-cell.sk-blue .sk-icon-wrapper, .sk-cell.sk-blue .sk-label { color: var(--white); }
-.sk-cell.sk-yellow .sk-icon-wrapper, .sk-cell.sk-yellow .sk-label { color: var(--black); }
-.sk-cell.sk-white .sk-icon-wrapper, .sk-cell.sk-white .sk-label { color: var(--black); }
-.sk-cell.sk-dark .sk-icon-wrapper, .sk-cell.sk-dark .sk-label { color: var(--white); }
+.sk-cell.sk-red .sk-icon-wrapper,
+.sk-cell.sk-red .sk-label {
+  color: var(--white);
+}
+
+.sk-cell.sk-blue .sk-icon-wrapper,
+.sk-cell.sk-blue .sk-label {
+  color: var(--white);
+}
+
+.sk-cell.sk-yellow .sk-icon-wrapper,
+.sk-cell.sk-yellow .sk-label {
+  color: var(--black);
+}
+
+.sk-cell.sk-white .sk-icon-wrapper,
+.sk-cell.sk-white .sk-label {
+  color: var(--black);
+}
+
+.sk-cell.sk-dark .sk-icon-wrapper,
+.sk-cell.sk-dark .sk-label {
+  color: var(--white);
+}
 
 /* Cell spanning */
-.span-c-2 { grid-column: span 2; }
-.span-r-2 { grid-row: span 2; }
-.span-r-3 { grid-row: span 3; }
+.span-c-2 {
+  grid-column: span 2;
+}
+
+.span-r-2 {
+  grid-row: span 2;
+}
+
+.span-r-3 {
+  grid-row: span 3;
+}
 
 /* ── Hover interactions ── */
 .sk-cell:hover {
@@ -183,39 +230,167 @@
 }
 
 .marquee-icon {
-  font-size: 20px; /* Reduced from 24px */
+  font-size: 20px;
+  /* Reduced from 24px */
 }
 
 .marquee-name {
   font-family: var(--font-mono);
-  font-size: 13px; /* Reduced from 16px */
+  font-size: 13px;
+  /* Reduced from 16px */
   letter-spacing: 0.05em;
   font-weight: 500;
 }
 
 @keyframes scroll-left {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ─── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .skills { padding: 100px 48px 40px 48px; }
-  
+  .skills {
+    padding: 100px 48px 40px 48px;
+  }
+
   .mondrian-skills {
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 100px;
+    grid-auto-rows: 110px;
+    grid-auto-flow: dense;
   }
+
+  /* Reset default spans and apply balanced 3-column layouts */
+  .mondrian-skills .sk-cell {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .mondrian-skills .sk-cell:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  /* React */
+  .mondrian-skills .sk-cell:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  /* Node.js */
+  .mondrian-skills .sk-cell:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  /* TypeScript */
+  .mondrian-skills .sk-cell:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  /* Socket.io */
+  .mondrian-skills .sk-cell:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  /* PostgreSQL */
+  .mondrian-skills .sk-cell:nth-child(5) {
+    grid-column: span 1;
+  }
+
+  /* Prisma */
+  .mondrian-skills .sk-cell:nth-child(9) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  /* Tailwind CSS */
+  .mondrian-skills .sk-cell:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  /* Redis */
+  .mondrian-skills .sk-cell:nth-child(10) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* Firebase */
+  .mondrian-skills .sk-cell:nth-child(8) {
+    grid-column: span 1;
+  }
+
+  /* AWS */
+  .mondrian-skills .sk-cell:nth-child(11) {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+
+  /* Python: full row */
 }
 
 @media (max-width: 640px) {
-  .skills { padding: 80px 24px 30px 24px; }
-  
+  .skills {
+    padding: 80px 24px 30px 24px;
+  }
+
   .mondrian-skills {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 90px;
+    grid-auto-rows: 95px;
+    grid-auto-flow: row;
   }
-  
-  .span-c-2 { grid-column: span 1; }
-  .span-r-3 { grid-row: span 2; }
+
+  /* Reset all spans to 1 column by 1 row */
+  .mondrian-skills .sk-cell {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* Precision spans to achieve perfect gapless alignment */
+  .mondrian-skills .sk-cell:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  /* React (Row 1 - Full Width) */
+  .mondrian-skills .sk-cell:nth-child(8) {
+    grid-column: span 2;
+  }
+
+  /* AWS (Row 5 - Full Width) */
+  .mondrian-skills .sk-cell:nth-child(11) {
+    grid-column: span 2;
+  }
+
+  /* Firebase (Row 7 - Full Width) */
+
+  /* Scale down cell contents so everything fits beautifully without wrapping */
+  .mondrian-skills .sk-icon-wrapper {
+    font-size: 28px !important;
+    transform: translateY(-4px) !important;
+  }
+
+  .mondrian-skills .sk-label {
+    font-size: 11px !important;
+    bottom: 12px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .mondrian-skills {
+    grid-auto-rows: 85px;
+  }
+
+  .mondrian-skills .sk-icon-wrapper {
+    font-size: 24px !important;
+    transform: translateY(-4px) !important;
+  }
+
+  .mondrian-skills .sk-label {
+    font-size: 10px !important;
+    bottom: 8px !important;
+  }
 }
