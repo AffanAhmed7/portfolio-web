@@ -4,7 +4,7 @@
 
 .skills {
   position: relative;
-  padding: 140px var(--px-hero);
+  padding: 140px var(--px-hero) 60px var(--px-hero);
   background: var(--black);
   z-index: 2;
   border-top: 1px solid var(--gray-2);
@@ -200,7 +200,7 @@
 
 /* ─── Responsive ─────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .skills { padding: 100px 48px; }
+  .skills { padding: 100px 48px 40px 48px; }
   
   .mondrian-skills {
     grid-template-columns: repeat(3, 1fr);
@@ -209,7 +209,7 @@
 }
 
 @media (max-width: 640px) {
-  .skills { padding: 80px 24px; }
+  .skills { padding: 80px 24px 30px 24px; }
   
   .mondrian-skills {
     grid-template-columns: repeat(2, 1fr);

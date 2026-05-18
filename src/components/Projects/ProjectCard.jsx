@@ -8,25 +8,37 @@ export default function ProjectCard({ project, onClick }) {
       layoutId={`project-${project.id}`}
       onClick={onClick}
     >
-      <div className="card-top">
-        <motion.h3 layoutId={`title-${project.id}`} className="card-title">
-          {project.name}
-        </motion.h3>
-        <span className="card-tag">{project.tag}</span>
-      </div>
+      {/* Background Image with Dark Grayscale Overlays */}
+      <div 
+        className="card-image-bg" 
+        style={{ backgroundImage: `url(${project.image})` }} 
+      />
       
-      <div className="card-middle">
-        <motion.p layoutId={`desc-${project.id}`} className="card-desc">
-          {project.shortDesc}
-        </motion.p>
-      </div>
+      {/* Gradient Mask Overlay */}
+      <div className="card-overlay" />
 
-      <div className="card-bottom">
-        <div className="card-stack">
-          {project.stack.join(' · ')}
+      {/* Card Content Overlay */}
+      <div className="card-content">
+        <div className="card-top">
+          <motion.h3 layoutId={`title-${project.id}`} className="card-title">
+            {project.name}
+          </motion.h3>
+          <span className="card-tag">{project.tag}</span>
         </div>
-        <div className="card-action">
-          View Case Study &rarr;
+        
+        <div className="card-middle">
+          <motion.p layoutId={`desc-${project.id}`} className="card-desc">
+            {project.shortDesc}
+          </motion.p>
+        </div>
+
+        <div className="card-bottom">
+          <div className="card-stack">
+            {project.stack.join(' · ')}
+          </div>
+          <div className="card-action">
+            View Case Study &rarr;
+          </div>
         </div>
       </div>
     </motion.div>
