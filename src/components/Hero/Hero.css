@@ -176,14 +176,14 @@
 @media (max-width: 768px) {
   .hero {
     min-height: 60vh;
-    padding: 130px 24px 30px 24px;
+    padding: 180px 24px 30px 24px;
   }
 }
 
 @media (max-width: 640px) {
   .hero {
     min-height: 60vh;
-    padding: 130px 24px 30px 24px;
+    padding: 180px 24px 30px 24px;
   }
   
   .hero__social-icon {
