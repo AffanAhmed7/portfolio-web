@@ -55,7 +55,7 @@ export default function VertexPage() {
         >
           <h2>Executive Summary</h2>
           <p>
-            <strong>Vertex</strong> is a production-grade, highly scalable e-commerce platform built to deliver a seamless shopping experience alongside a powerful administrative backend. Designed with modern software engineering principles, it leverages a React frontend with immersive 3D product visualizations, powered by a high-performance Node.js/Express backend.
+            <strong>Vertex</strong> is a production-grade, highly scalable e-commerce platform built to deliver a seamless shopping experience alongside a powerful administrative backend. Designed with modern software engineering principles, it leverages a React frontend powered by a high-performance Node.js/Express backend.
           </p>
           <p style={{ marginTop: '15px' }}>
             With advanced features ranging from real-time analytics and secure two-factor authentication to distributed background job queues, Vertex demonstrates a deep understanding of enterprise-level architecture, performance optimization, and secure API design.
@@ -73,7 +73,6 @@ export default function VertexPage() {
 
           <h3 className="vertex-subsection-title"> Immersive User Experience</h3>
           <ul className="vertex-list">
-            <li><strong>3D Product Visualization:</strong> Leverages <strong>Three.js</strong> and <strong>React Three Fiber</strong> to allow customers to view, rotate, and interact with products in a 3D space, significantly enhancing user engagement.</li>
             <li><strong>Responsive & Animated UI:</strong> Built with <strong>Tailwind CSS</strong> and <strong>Framer Motion</strong>, delivering a pixel-perfect, mobile-first experience with smooth, high-fidelity micro-interactions.</li>
             <li><strong>Advanced State Management:</strong> Utilizes <strong>Redux Toolkit</strong> for predictable and efficient global state management across complex checkout flows and shopping carts.</li>
           </ul>
@@ -117,7 +116,6 @@ export default function VertexPage() {
                 <li><strong>Core:</strong> React 18, TypeScript, Vite</li>
                 <li><strong>State & Routing:</strong> Redux Toolkit, React Router DOM</li>
                 <li><strong>Styling & Anim:</strong> Tailwind CSS, Framer Motion, clsx, tailwind-merge</li>
-                <li><strong>3D Graphics:</strong> Three.js, React Three Fiber, React Three Drei</li>
                 <li><strong>Data Viz:</strong> Recharts</li>
                 <li><strong>Hosting:</strong> Vercel</li>
               </ul>
