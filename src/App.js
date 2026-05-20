@@ -6,6 +6,7 @@ import Home from './components/Home/Home';
 import NexusPage from './components/Nexus/NexusPage';
 import VertexPage from './components/Vertex/VertexPage';
 import NeoPlanePage from './components/NeoPlane/NeoPlanePage';
+import DebuggerPage from './components/Debugger/DebuggerPage';
 
 export default function App() {
   const cursorRef = useRef(null);
@@ -59,6 +60,7 @@ export default function App() {
         <Route path="/nexus" element={<NexusPage />} />
         <Route path="/vertex" element={<VertexPage />} />
         <Route path="/neoplane" element={<NeoPlanePage />} />
+        <Route path="/debugger" element={<DebuggerPage />} />
       </Routes>
     </>
   );

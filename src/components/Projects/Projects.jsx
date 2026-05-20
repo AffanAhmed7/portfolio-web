@@ -116,11 +116,12 @@ const PROJECTS_DATA = [
   },
   {
     id: 'debugger',
-    name: 'Web Debugger',
-    tag: 'Developer Tool',
-    shortDesc: 'Low-overhead browser sandbox extension for runtime audits and visual interaction replay.',
-    stack: ['TypeScript', 'Chrome APIs', 'Shadow DOM', 'rrweb'],
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+    name: 'Universal Web Debugger',
+    tag: 'Chrome Extension',
+    shortDesc: 'A lightweight Chrome extension overlay for real-time DOM inspection and CSS debugging.',
+    stack: ['TypeScript', 'Vite', 'Chrome APIs', 'Shadow DOM'],
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop',
+    bgSize: 'cover',
     problem: 'Web developers debugging complex runtime environments often struggle to replicate rare styling layout crashes or performance regressions because external audit code leaks or clashes with target site stylesheet configurations.',
     approach: 'I engineered a runtime debugger extension leveraging Chrome APIs. The debugger UI panel is safely isolated inside a Shadow DOM, preventing target web page styles from leaking in. I integrated rrweb to reconstruct high-fidelity, frame-perfect visuals of complex user session errors.',
     architecture: `Target Web Browser Environment
@@ -224,6 +225,8 @@ export default function Projects() {
                   navigate('/vertex');
                 } else if (project.id === 'neoplane') {
                   navigate('/neoplane');
+                } else if (project.id === 'debugger') {
+                  navigate('/debugger');
                 } else {
                   setSelectedProject(project);
                 }

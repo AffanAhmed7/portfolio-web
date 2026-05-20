@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import resumeFile from '../../media/Resume (3).pdf';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +36,7 @@ export default function Navbar() {
         {/* Download CV Button */}
         <div className="navbar-actions">
           <a 
-            href="/cv.pdf" 
+            href={resumeFile} 
             download="Affan_Ahmed_CV.pdf"
             className="navbar-cv-btn"
             id="nav-cv"

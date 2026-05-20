@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiGmail, SiUpwork, SiFiverr, SiLeetcode } from 'react-icons/si';
+import { SiGmail, SiUpwork, SiFiverr } from 'react-icons/si';
 import './Hero.css';
 
 /* ─── Animation variants ──────────────────────────────────────────── */
@@ -24,12 +24,11 @@ const fadeIn = {
 
 /* ─── Social Links ────────────────────────────────────────────────── */
 const SOCIALS = [
-  { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com', colorClass: 'social-github' },
-  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://linkedin.com', colorClass: 'social-linkedin' },
-  { name: 'Gmail', icon: <SiGmail />, url: 'mailto:contact@example.com', colorClass: 'social-gmail' },
+  { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com/AffanAhmed7', colorClass: 'social-github' },
+  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/affan-ahmed-885735298/', colorClass: 'social-linkedin' },
+  { name: 'Gmail', icon: <SiGmail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=affanahmedkhan34@gmail.com', colorClass: 'social-gmail' },
   { name: 'Upwork', icon: <SiUpwork />, url: 'https://upwork.com', colorClass: 'social-upwork' },
   { name: 'Fiverr', icon: <SiFiverr />, url: 'https://fiverr.com', colorClass: 'social-fiverr' },
-  { name: 'LeetCode', icon: <SiLeetcode />, url: 'https://leetcode.com', colorClass: 'social-leetcode' },
 ];
 
 export default function Hero() {

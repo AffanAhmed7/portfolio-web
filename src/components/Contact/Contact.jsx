@@ -3,8 +3,9 @@ import { motion } from 'framer-motion';
 import './Contact.css';
 
 export default function Contact() {
-  const email = "affanahmed.dev7@gmail.com";
-  const linkedin = "linkedin.com/in/affan-ahmed-khan";
+  const email = "affanahmedkhan34@gmail.com";
+  const linkedinUrl = "https://www.linkedin.com/in/affan-ahmed-885735298/";
+  const linkedinHandle = "affan-ahmed-885735298";
 
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-heading">
@@ -20,11 +21,11 @@ export default function Contact() {
         <div className="contact-info">
           <p className="contact-item">
             <span className="contact-label">Gmail:</span> 
-            <a href={`mailto:${email}`} className="contact-link">{email}</a>
+            <a href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}`} target="_blank" rel="noreferrer" className="contact-link">{email}</a>
           </p>
           <p className="contact-item">
             <span className="contact-label">LinkedIn:</span> 
-            <a href={`https://${linkedin}`} target="_blank" rel="noreferrer" className="contact-link">{linkedin}</a>
+            <a href={linkedinUrl} target="_blank" rel="noreferrer" className="contact-link">{linkedinHandle}</a>
           </p>
         </div>
       </motion.div>
