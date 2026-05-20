@@ -1,15 +1,15 @@
 import React, { useEffect, useRef } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './styles/global.css';
 import Navbar from './components/Navbar/Navbar';
-import Hero   from './components/Hero/Hero';
-import Skills from './components/Skills/Skills';
-import Projects from './components/Projects/Projects';
-import Experience from './components/Experience/Experience';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import NexusPage from './components/Nexus/NexusPage';
+import VertexPage from './components/Vertex/VertexPage';
+import NeoPlanePage from './components/NeoPlane/NeoPlanePage';
 
 export default function App() {
   const cursorRef = useRef(null);
+  const location = useLocation();
 
   useEffect(() => {
     // Detect touch/hoverless devices and disable custom cursor JS logic
@@ -30,7 +30,7 @@ export default function App() {
     window.addEventListener('mousemove', move);
 
     // Expand on interactive elements
-    const interactives = document.querySelectorAll('a, button, .mondrian-wrapper, .project-card, .exp-block, .contact-link, .contact-btn, .navbar-logo, .navbar-link, .navbar-cv-btn');
+    const interactives = document.querySelectorAll('a, button, .mondrian-wrapper, .project-card, .exp-block, .contact-link, .contact-btn, .navbar-logo, .navbar-link, .navbar-cv-btn, .nexus-back-btn');
     interactives.forEach(el => {
       el.addEventListener('mouseenter', expand);
       el.addEventListener('mouseleave', shrink);
@@ -43,27 +43,23 @@ export default function App() {
         el.removeEventListener('mouseleave', shrink);
       });
     };
-  }, []);
+  }, [location.pathname]); // Re-attach when page changes
 
   return (
     <>
       {/* Custom cursor */}
       <div className="cursor" ref={cursorRef} aria-hidden="true" />
 
-      {/* Floating dynamic navigation */}
-      <Navbar />
+      {/* Floating dynamic navigation (only on home) */}
+      {location.pathname === '/' && <Navbar />}
 
-      {/* Main content */}
-      <main>
-        <Hero />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Contact />
-      </main>
-
-      {/* Page Footer */}
-      <Footer />
+      {/* Routing */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/nexus" element={<NexusPage />} />
+        <Route path="/vertex" element={<VertexPage />} />
+        <Route path="/neoplane" element={<NeoPlanePage />} />
+      </Routes>
     </>
   );
 }

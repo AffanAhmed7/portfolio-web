@@ -11,7 +11,12 @@ export default function ProjectCard({ project, onClick }) {
       {/* Background Image with Dark Grayscale Overlays */}
       <div 
         className="card-image-bg" 
-        style={{ backgroundImage: `url(${project.image})` }} 
+        style={{ 
+          backgroundImage: `url(${project.image})`,
+          backgroundSize: project.bgSize || 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center'
+        }} 
       />
       
       {/* Gradient Mask Overlay */}

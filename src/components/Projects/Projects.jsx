@@ -1,18 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import ProjectDetail from './ProjectDetail';
 import './Projects.css';
+import nx1 from '../../media/nx1.png';
+import v1 from '../../media/v1.png';
+import np1 from '../../media/np1.png';
 
 const PROJECTS_DATA = [
   {
     id: 'neoplane',
     name: 'NeoPlane',
-    tag: 'Real-Time System',
+    tag: <a href="https://neoplane-frontend.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>Live Link ↗</a>,
     shortDesc: 'Low-latency collaborative messaging platform with optimized media processing pipeline.',
     stack: ['React', 'Node.js', 'Socket.io', 'Prisma', 'PostgreSQL', 'AWS S3'],
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop',
+    image: np1,
+    bgSize: 'cover',
     problem: 'Polling networks fail to scale and maintain sub-millisecond updates under high-density, real-time communications. Multi-user systems require instantaneous message routing, reliable sync states, and minimal round-trip latency to prevent connection bottlenecks under stress.',
     approach: 'I engineered a custom bidirectional pipeline leveraging Socket.io for low-latency delivery. To prevent backend thread blocks during image and file transmission, I separated the media processing engine using Sharp to compress assets on the fly before pushing them to AWS S3 storage buckets.',
     architecture: `Client UI (React / Zustand)
@@ -42,10 +47,11 @@ const PROJECTS_DATA = [
   {
     id: 'nexus',
     name: 'Nexus',
-    tag: 'Collaboration Platform',
+    tag: <a href="https://nexus-frontend-nu-lake.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>Live Link ↗</a>,
     shortDesc: 'Enterprise workspace with dynamic Kanban boards, live presence, and role permissions.',
     stack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Socket.io'],
-    image: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=800&auto=format&fit=crop',
+    image: nx1,
+    bgSize: 'cover',
     problem: 'Managing project workflows across dozens of active client channels requires precise state orchestration. Without active locking and fast authorization checks, concurrent drag-and-drop operations on a digital board cause conflict anomalies and stale data rendering.',
     approach: 'I constructed a real-time Kanban management platform running on TypeScript and Prisma ORM. The system dynamically validates board operations through Socket.io and updates collaborative states using TanStack Query queries combined with local optimistic UI modifications.',
     architecture: `Client Board (React / TS)
@@ -76,12 +82,13 @@ const PROJECTS_DATA = [
     githubLink: 'https://github.com/example/nexus'
   },
   {
-    id: 'ecommerce',
-    name: 'E-Commerce Engine',
-    tag: 'Scalable Backend',
+    id: 'vertex',
+    name: 'Vertex',
+    tag: <a href="https://vertex-frontend-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>Live Link ↗</a>,
     shortDesc: 'High-throughput REST API with automated job queues and optimized analytics processing.',
     stack: ['TypeScript', 'Node.js', 'PostgreSQL', 'Redis', 'BullMQ'],
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
+    image: v1,
+    bgSize: 'cover',
     problem: 'Processing high-frequency transactional data alongside complex analytical metrics blocks standard API query channels, triggering high latency overhead and leading to deadlocks during high-demand inventory shifts.',
     approach: 'I designed a highly scalable transactional REST API utilizing Redis caching and a distributed BullMQ task engine. Long-running computational processes (like computing storewide sales KPIs) were offloaded into asynchronous background queues.',
     architecture: `Client / Administrative Dashboard
@@ -147,6 +154,7 @@ const PROJECTS_DATA = [
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const scrollContainerRef = useRef(null);
+  const navigate = useNavigate();
 
   // Close case study on Escape key press
   useEffect(() => {
@@ -209,7 +217,17 @@ export default function Projects() {
             <ProjectCard 
               key={project.id} 
               project={project} 
-              onClick={() => setSelectedProject(project)} 
+              onClick={() => {
+                if (project.id === 'nexus') {
+                  navigate('/nexus');
+                } else if (project.id === 'vertex') {
+                  navigate('/vertex');
+                } else if (project.id === 'neoplane') {
+                  navigate('/neoplane');
+                } else {
+                  setSelectedProject(project);
+                }
+              }} 
             />
           ))}
         </div>
