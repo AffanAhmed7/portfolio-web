@@ -33,7 +33,7 @@ export default function NexusPage() {
           <div className="nexus-meta">
             <div className="meta-item">
               <span className="meta-label">Live Deployment</span>
-              <a href="https://nexus.example.com" target="_blank" rel="noopener noreferrer" className="meta-link">Nexus Platform</a>
+              <a href="https://nexus-frontend-nu-lake.vercel.app/" target="_blank" rel="noopener noreferrer" className="meta-link">Nexus Platform</a>
             </div>
             <div className="meta-item">
               <span className="meta-label">Frontend</span>
