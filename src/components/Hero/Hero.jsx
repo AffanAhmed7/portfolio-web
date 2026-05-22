@@ -28,7 +28,7 @@ const SOCIALS = [
   { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/affan-ahmed-885735298/', colorClass: 'social-linkedin' },
   { name: 'Gmail', icon: <SiGmail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=affanahmedkhan34@gmail.com', colorClass: 'social-gmail' },
   { name: 'Upwork', icon: <SiUpwork />, url: 'https://upwork.com', colorClass: 'social-upwork' },
-  { name: 'Fiverr', icon: <SiFiverr />, url: 'https://fiverr.com', colorClass: 'social-fiverr' },
+  { name: 'Fiverr', icon: <SiFiverr />, url: 'https://www.fiverr.com/s/o85woLg', colorClass: 'social-fiverr' },
 ];
 
 export default function Hero() {
