@@ -25,7 +25,7 @@ const fadeIn = {
 /* ─── Social Links ────────────────────────────────────────────────── */
 const SOCIALS = [
   { name: 'GitHub', icon: <FaGithub />, url: 'https://github.com/AffanAhmed7', colorClass: 'social-github' },
-  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/affan-ahmed-885735298/', colorClass: 'social-linkedin' },
+  { name: 'LinkedIn', icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/affanahmedkhan34', colorClass: 'social-linkedin' },
   { name: 'Gmail', icon: <SiGmail />, url: 'https://mail.google.com/mail/?view=cm&fs=1&to=affanahmedkhan34@gmail.com', colorClass: 'social-gmail' },
   { name: 'Upwork', icon: <SiUpwork />, url: 'https://upwork.com', colorClass: 'social-upwork' },
   { name: 'Fiverr', icon: <SiFiverr />, url: 'https://www.fiverr.com/s/o85woLg', colorClass: 'social-fiverr' },
