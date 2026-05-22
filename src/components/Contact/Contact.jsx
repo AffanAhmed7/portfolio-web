@@ -4,8 +4,8 @@ import './Contact.css';
 
 export default function Contact() {
   const email = "affanahmedkhan34@gmail.com";
-  const linkedinUrl = "https://www.linkedin.com/in/affan-ahmed-885735298/";
-  const linkedinHandle = "affan-ahmed-885735298";
+  const linkedinUrl = "https://www.linkedin.com/in/affanahmedkhan34";
+  const linkedinHandle = "affanahmedkhan34";
 
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-heading">
