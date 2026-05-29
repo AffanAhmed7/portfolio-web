@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import resumeFile from '../../media/Resume (3).pdf';
+import resumeFile from '../../media/Affan_Ahmed_Khan_Resume (1).pdf';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
